@@ -1,0 +1,34 @@
+*{
+    color:#fff;
+    font-family: 'Poppins', sans-serif;
+}
+
+.bg{
+    position:realtive;
+    background:linear-gradient(rgba(0, 0, 0, 0.575),rgba(0, 0, 0, 0.575)),url(../img/Mineral-Water.jpg) ;
+    min-height:100vh;
+    background-size: cover;
+    background-position: center;
+    
+}
+.form-continer{
+    background: linear-gradient(rgba(7, 124, 202, 0.404),rgba(7, 124, 202, 0.404));
+     border:0px solid #fff;
+    padding:50px 60px;
+    margin-top:20vh;
+    -webkit-box-shadow: -1px 4px 26px 11px rgb(17, 20, 192);
+    -moz-box-shadow:-1px 4px 26px 11px rgb(17, 20, 192);
+    box-shadow: -1px 4px 26px 11px rgb(17, 20, 192); 
+} 
+
+.head{
+    text-transform: uppercase;
+}
+.role{
+    color: grey;
+}
+.role > option
+{
+    color: white;
+    background-color:blue ;
+}

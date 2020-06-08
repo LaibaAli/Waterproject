@@ -1,0 +1,45 @@
+header{
+    position: absolute;
+    z-index:10;
+    width:100%; 
+}
+.banner{
+    position:realtive;
+    background:linear-gradient(rgba(0, 0, 0, 0.575),rgba(0, 0, 0, 0.575)),url(../img/Mineral-Water.jpg) ;
+    min-height:100vh;
+    background-size: cover;
+    background-position: center;
+    padding: 250px 0 200px;
+}
+
+.banner h2{
+    margin:0;
+    padding-top: 25px;
+    font-size: 2em;
+    font-weight:1000;
+    color: #fff;
+    text-transform: uppercase;
+} 
+.banner p{
+    margin:1em 0 0;
+    padding: 0;
+    font-size: 1.2em;
+    line-height: 1.5em;
+    color: #fff;
+    
+}
+.btnD1{
+    display: inline-block;
+    margin:1em 0 0;
+    background: #ff2626;
+    color: #fff;
+    padding:10px 20px;
+    text-transform: uppercase;
+    border:none;
+    font-weight: 800;
+}
+.btnD1:hover 
+{
+    color: #775757;
+    text-decoration: none;
+}
