@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer info</title>
+    <!-- Bootstrap CSS -->
+    <link rel ="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel ="stylesheet" href="../css/navbar.css">
+    <link rel ="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+</head>
+<body>
+
+    <!--------------------------start navbar---------------->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light sticky-top" style="background-color: transparent;">
+            <a class="navbar-brand text-white" href="#">RMS</a>
+            <!-----------toggler buton---------------------------->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon "></span>
+            </button>
+          <!----------------------navbar menu-->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav ml-lg-auto text-center" >
+                <li class="nav-item active ">
+                  <a class="nav-link text-white" href="#"><i class="fa fa-home" aria-hidden="true"></i> Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item dropdown text-white">
+                  <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                   User
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown" >
+                    <a class="dropdown-item" href="../html/Customer.html" >Customer</a>
+                    <a class="dropdown-item" href="../html/printsheet.html"> delevery  boy</a>
+                    <a class="dropdown-item" href="../html/dailytotal.html">lodder</a>
+                    <a class="dropdown-item" href="../html/dailytotal.html">driver</a>
+                  </div>
+                </li>
+                <li class="nav-item dropdown text-white">
+                    <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                     Generate sheet
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown" >
+                      <a class="dropdown-item" href="../html/new sheet.html" >daily bottle delver entry, </a>
+                      <a class="dropdown-item" href="../html/printsheet.html">print sheets</a>
+                    </div>
+                  </li>
+                  <li class="nav-item dropdown text-white">
+                    <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        water plant
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown" >
+                      <a class="dropdown-item" href="../html/new sheet.html" >daily bottle delver entry </a>
+                      <a class="dropdown-item" href="../html/printsheet.html">print sheets</a>
+                    </div>
+                  </li>
+                
+                  <li class="nav-item">
+                    <a class="nav-link text-white" href="#">Logout</a>
+                  </li>
+              </ul>
+            </div>
+          </nav>
+        <!--------------------------end navbar------------------>
+    </header>
+    <!-------------------banner---------------------------->
+    <section class="banner ">
+        <div class = "container" style="background: linear-gradient(rgba(7, 124, 202, 0.404),rgba(7, 124, 202, 0.404)); margin-top: 0px;">
+            <table class="table table-bordered   table-hover text-center" id="mydatatable" >
+                <thead class="thead-dark text-white ">
+                  <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">NAME</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">CONTACT NO</th>
+                    <th scope="col">CONTACT NO</th>
+                    
+                  </tr>
+                </thead>
+                <tbody style="background-color: white;">
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>Ali raza</td>
+                    <td>R-1293 15/A-4 bufferzone Karachi</td>
+                    <td>03352602750</td>
+                    <td>03132307987</td>
+                  </tr>
+                  
+                </tbody>
+              </table>
+          
+        </div>  
+    </section>
+
+     <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" style="color: white;">
+                $(document).ready( function () {
+            $('.table').DataTable();
+        } );
+    </script>
+</body>
+</html>

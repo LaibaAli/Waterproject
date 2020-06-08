@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel ="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet"  href="../css/deleterow.css">
+    <title>Generate New Sheets</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <!------ Include the above in your HEAD tag ---------->
+</head>
+<body>
+
+    <!--------------------------start navbar---------------->
+   <header>
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top" style="background-color: transparent;">
+        <a class="navbar-brand text-white" href="#">RMS</a>
+        <!-----------toggler buton---------------------------->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon "></span>
+        </button>
+      <!----------------------navbar menu-->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-lg-auto text-center" >
+            <li class="nav-item active ">
+              <a class="nav-link text-white" href="#"><i class="fa fa-home" aria-hidden="true"></i> Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item dropdown text-white">
+              <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+               User
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown" >
+                <a class="dropdown-item" href="../html/Customer.html" >Customer</a>
+                <a class="dropdown-item" href="../html/delvery boy.html"> delevery  boy</a>
+                <a class="dropdown-item" href="../html/dailytotal.html">lodder</a>
+                <a class="dropdown-item" href="../html/dailytotal.html">driver</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown text-white">
+                <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                 Generate sheet
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown" >
+                  <a class="dropdown-item" href="../html/new sheet.html" >daily bottle delver entry, </a>
+                  <a class="dropdown-item" href="../html/printsheet.html">print sheets</a>
+                </div>
+              </li>
+              <li class="nav-item dropdown text-white">
+                <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    water plant
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown" >
+                  <a class="dropdown-item" href="../html/generatnewsheet.html" >daily bottle delver entry </a>
+                  <a class="dropdown-item" href="../html/printsheet.html">print sheets</a>
+                </div>
+              </li>
+            
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#">Logout</a>
+              </li>
+          </ul>
+        </div>
+      </nav>
+    <!--------------------------end navbar------------------>
+    </header>
+
+    <!-------------------banner---------------------------->
+    <section class="banner">
+        <div class="container" style="background: linear-gradient(rgba(7, 124, 202, 0.404),rgba(7, 124, 202, 0.404)); margin-top: 0px;">
+        <div class="row clearfix">
+            <div class="col-md-12">
+            <table class="table  table-hover" id="tab_logic">
+                <thead class="thead text-white ">
+                <tr>
+                    <th class="text-center"> # </th>
+                    <th class="text-center"> Product </th>
+                    <th class="text-center"> Qty </th>
+                    <th class="text-center"> Price </th>
+                    <th class="text-center"> Total </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr id='addr0'>
+                    <td>1</td>
+                    <td><input type="text" name='product[]'  placeholder='Enter Product Name' class="form-control"/></td>
+                    <td><input type="number" name='qty[]' placeholder='Enter Qty' class="form-control qty" step="0" min="0"/></td>
+                    <td><input type="number" name='price[]' placeholder='Enter Unit Price' class="form-control price" step="0.00" min="0"/></td>
+                    <td><input type="number" name='total[]' placeholder='0.00' class="form-control total" readonly/></td>
+                </tr>
+                <tr id='addr1'></tr>
+                </tbody>
+            </table>
+            </div>
+        </div>
+        <div class="row clearfix">
+            <div class="col-md-12">
+            <button id="add_row" class="btn btn-default pull-left">Add Row</button>
+            <button id='delete_row' class="pull-left btn btn-default" style="margin-left: 10px;">Delete Row</button>
+            </div>
+        </div>
+        <div class="row clearfix" style="margin-top:20px">
+            <div class="pull-right col-md-4" style="margin-left: 750px;">
+            <table class="table table-hover" id="tab_logic_total">
+                <tbody>
+                <tr>
+                    <th class="text-center">Sub Total</th>
+                    <td class="text-center"><input type="number" name='sub_total' placeholder='0.00' class="form-control" id="sub_total" readonly/></td>
+                </tr>
+                <tr>
+                    <th class="text-center">Tax</th>
+                    <td class="text-center"><div class="input-group mb-2 mb-sm-0">
+                        <input type="number" class="form-control" id="tax" placeholder="0">
+                        <div class="input-group-addon">%</div>
+                    </div></td>
+                </tr>
+                <tr>
+                    <th class="text-center">Tax Amount</th>
+                    <td class="text-center"><input type="number" name='tax_amount' id="tax_amount" placeholder='0.00' class="form-control" readonly/></td>
+                </tr>
+                <tr>
+                    <th class="text-center">Grand Total</th>
+                    <td class="text-center"><input type="number" name='total_amount' id="total_amount" placeholder='0.00' class="form-control" readonly/></td>
+                </tr>
+                </tbody>
+            </table>
+            </div>
+        </div>
+        </div>
+
+                </section>
+
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" ></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" ></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <script type="text/javascript">$(document).ready(function(){
+            var i=1;
+            $("#add_row").click(function(){b=i-1;
+                  $('#addr'+i).html($('#addr'+b).html()).find('td:first-child').html(i+1);
+                  $('#tab_logic').append('<tr id="addr'+(i+1)+'"></tr>');
+                  i++; 
+              });
+            $("#delete_row").click(function(){
+                if(i>1){
+                $("#addr"+(i-1)).html('');
+                i--;
+                }
+                calc();
+            });
+            
+            $('#tab_logic tbody').on('keyup change',function(){
+                calc();
+            });
+            $('#tax').on('keyup change',function(){
+                calc_total();
+            });
+            
+        
+        });
+        
+        function calc()
+        {
+            $('#tab_logic tbody tr').each(function(i, element) {
+                var html = $(this).html();
+                if(html!='')
+                {
+                    var qty = $(this).find('.qty').val();
+                    var price = $(this).find('.price').val();
+                    $(this).find('.total').val(qty*price);
+                    
+                    calc_total();
+                }
+            });
+        }
+        
+        function calc_total()
+        {
+            total=0;
+            $('.total').each(function() {
+                total += parseInt($(this).val());
+            });
+            $('#sub_total').val(total.toFixed(2));
+            tax_sum=total/100*$('#tax').val();
+            $('#tax_amount').val(tax_sum.toFixed(2));
+            $('#total_amount').val((tax_sum+total).toFixed(2));
+        }</script>
+      
+        
+ 
+
+    
+
+</body>
+</html>

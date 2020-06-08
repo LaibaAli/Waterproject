@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="../css/navbar.css">
+  <link rel="stylesheet" href="../css/deleterow.css">
+  <title>Printsheet</title>
+</head>
+
+<body>
+
+  <!--------------------------start navbar---------------->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top" style="background-color: transparent;">
+      <a class="navbar-brand text-white" href="#">RMS</a>
+      <!-----------toggler buton---------------------------->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon "></span>
+      </button>
+      <!----------------------navbar menu-->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-lg-auto text-center">
+          <li class="nav-item active ">
+            <a class="nav-link text-white" href="#"><i class="fa fa-home" aria-hidden="true"></i> Home <span
+                class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item dropdown text-white">
+            <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              User
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="../html/Customer.html">Customer</a>
+              <a class="dropdown-item" href="../html/delvery boy.html"> delevery boy</a>
+              <a class="dropdown-item" href="../html/dailytotal.html">lodder</a>
+              <a class="dropdown-item" href="../html/dailytotal.html">driver</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown text-white">
+            <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Generate sheet
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="../html/generatnewsheet.html">daily bottle delver entry, </a>
+              <a class="dropdown-item" href="../html/printsheet.html">print sheets</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown text-white">
+            <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              water plant
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="../html/new sheet.html">daily bottle delver entry </a>
+              <a class="dropdown-item" href="../html/printsheet.html">print sheets</a>
+            </div>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link text-white" href="#">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!--------------------------end navbar------------------>
+  </header>
+
+  <!-------------------banner---------------------------->
+  <section class="banner">
+    <div class="container text-white "
+      style="background: linear-gradient(rgba(7, 124, 202, 0.404),rgba(7, 124, 202, 0.404)); margin-top: 0px;">
+      <table class="table table-bordered   table-hover text-center" id="example">
+        <thead class="thead text-white " style="background-color: rgb(17, 20, 192);">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">NAME</th>
+            <th scope="col">BOTTLE DLVD</th>
+            <th scope="col">EMPTY RCVD</th>
+            <th scope="col">BAL BOTTLE</th>
+            <th scope="col">RATE</th>
+            <th scope="col">AMOUNT RECD</th>
+            <th scope="col">BALANCE AMOUNT</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody style="background-color: white; color: black;">
+          <tr>
+            <td>001</td>
+            <td>Laiba</td>
+            <td>2</td>
+            <td>2</td>
+            <td>1</td>
+            <td>80</td>
+            <td>500</td>
+            <td>100</td>
+            <td><button>edit</button> | <button>Delete</button></td>
+          </tr>
+          <tr>
+            <td>001</td>
+            <td>Laiba</td>
+            <td>2</td>
+            <td>2</td>
+            <td>1</td>
+            <td>80</td>
+            <td>500</td>
+            <td>100</td>
+            <td><button>edit</button> | <button>Delete</button></td>
+          </tr>
+
+        </tbody>
+        <tfoot>
+          <tr>
+            <th style="text-align:left">TOTAL =</th>
+            <th style="text-align:left">TOTAL =</th>
+            <th style="text-align:left">TOTAL =</th>
+            <th style="text-align:left">TOTAL =</th>
+            <th style="text-align:left">TOTAL =</th>
+            <th style="text-align:left">TOTAL =</th>
+            <th style="text-align:left">TOTAL =</th>
+            <th style="text-align:left">TOTAL =</th>
+          </tr>
+        </tfoot>
+      </table>
+
+    </div>
+    <!-----------------------------ADD ROWS BUTTON--------------->
+    <center>
+      <div class="btn-container" style="padding-top: 20px;">
+        <button class="btn btn-primary btn-lg hidden-print" onclick="myFunction()"><span
+            class="glyphicon glyphicon-print" aria-hidden="true"></span> <i class="fa fa-print" aria-hidden="true"></i>
+          Print</button>
+        <!-----------------------------submit BUTTON--------------->
+
+        <button class="btn  btn-primary btn-lg" id="save"><i class="fa fa-floppy-o" aria-hidden="true"></i>
+          Save</button>
+
+      </div>
+    </center>
+  </section>
+
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+  <script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+  <script type="text/javascript" src="../js/print.js"></script>
+</body>
+
+</html>

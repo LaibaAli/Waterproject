@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href=" https://cdn.datatables.net/buttons/1.6.1/css/buttons.dataTables.min.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/deleterow.css">
+    <title>Add customer</title>
+</head>
+
+<body>
+
+    <!--------------------------start navbar---------------->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light sticky-top" style="background-color: transparent;">
+            <a class="navbar-brand text-white" href="#">RMS</a>
+            <!-----------toggler buton---------------------------->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon "></span>
+            </button>
+            <!----------------------navbar menu-->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-lg-auto text-center">
+                    <li class="nav-item active ">
+                        <a class="nav-link text-white" href="#"><i class="fa fa-home" aria-hidden="true"></i> Home <span
+                                class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item dropdown text-white">
+                        <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Customer
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="../html/addcustomer.html">Add ustomer</a>
+                            <a class="dropdown-item" href="../html/customerinfo.html"> customer info</a>
+                        </div>
+                    </li>
+
+
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <!--------------------------end navbar------------------>
+    </header>
+
+
+    <!-------------------banner---------------------------->
+    <section class="banner">
+        <section>
+            <div class="row gap100" style="width: 100%;">
+                <div class="col-md-6">
+                    <div class="table-responsive">
+                        <table id="autocomplete_table" class="table table-hover autocomplete_table">
+                            <thead class=" thread-light text-white text-center">
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">NAME</th>
+                                    <th scope="col">Address</th>
+                                    <th scope="col">contact no</th>
+                                    <th scope="col">bottle deposite</th>
+                                    <th scope="col">each bottle rate</th>
+                                    <th scope="col">bottle qty</th>
+
+                                </tr>
+                            </thead>
+                            <tbody id="save">
+                                <tr id="row_1">
+                                    <th id="delete_1" scope="row" class="delete_row "><i class="fa fa-trash text-white"
+                                            aria-hidden="true"></i></th>
+                                    <td>
+                                        <input type="text" data-type="name" name="name[]" id="name_1"
+                                            class="form-control autocomplete_text" autocomplete="off">
+                                    </td>
+                                    <td>
+                                        <input type="text" data-type="bottle DLVD" name="bottle DLVD[]" id="bottle_DLVD"
+                                            class="form-control autocomplete_numeric" autocomplete="off">
+                                    </td>
+
+                                    <td>
+                                        <input type="number" data-type="empty RCVD" name="empty RCVD[]" id="empty_RCVD"
+                                            class="form-control autocomplete_numeric" autocomplete="off">
+                                    </td>
+                                    <td>
+                                        <input type="number" data-type="bal bottle" name="bal bottle[]" id="bal_bottle"
+                                            class="form-control autocomplete_numeric" autocomplete="off">
+                                    </td>
+                                    <td>
+                                        <input type="number" data-type="rate" name="rate[]" id="rate_1"
+                                            class="form-control autocomplete_numeric" autocomplete="off">
+                                    </td>
+                                    <td>
+                                        <input type="number" data-type="amount RECD" name="bal bottle[]"
+                                            id="amount_RECD" class="form-control autocomplete_numeric"
+                                            autocomplete="off">
+                                    </td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-----------------------------ADD ROWS BUTTON--------------->
+                    <div class="btn-container">
+                        <button class="btn " id="addNew"><i class="fa fa-plus" aria-hidden="true"></i> Add row</button>
+                        <!-----------------------------submit BUTTON--------------->
+                             <button class="btn" id="Submit"><i class="fa fa-database" aria-hidden="true"></i>
+                            Submit</button>
+                           
+                    </div>
+                   
+
+                    <!-----------------------------end BUTTON--------------->
+                </div>
+                <!-------------------left table---------------------------->
+                <div class=" col-md-6" style="background-color: rgba(207, 207, 207, 0.972);">
+                    <table class="table table-bordered   table-hover text-center" id="mydatatable">
+                        <thead class="thead-dark text-white ">
+                            <tr>
+                                <th scope="col">NAME</th>
+                                <th scope="col">Address</th>
+                                <th scope="col">Contact no</th>
+                                <th scope="col">Bottle deposite</th>
+                                <th scope="col">Each bottle rate</th>
+                                <th scope="col">bottle qty</th>
+                            </tr>
+                        </thead>
+                        <tbody style="background-color: white;">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </section>
+    </section>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../js/opennew.js"></script>
+    <script src="../js/addRow.js"></script>
+    <script src="../js/deleteRow.js"></script>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.print.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.6.1/js/dataTables.buttons.min.js"></script>
+
+    <!-----------------------only print table-------------------------->
+    <script>
+        $(document).ready(function () {
+            $('#mydatatable').DataTable({
+                dom: 'Bfrtip',
+                buttons: [
+                    'print'
+                ]
+            });
+        });
+    </script>
+
+
+</body>
+
+</html>
