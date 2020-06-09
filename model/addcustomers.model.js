@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-var addcustomerSchema = new mongoose.Schema({
+const addcustomerSchema = new mongoose.Schema({
     name: {
         type:String
     },
@@ -10,10 +10,7 @@ var addcustomerSchema = new mongoose.Schema({
     contact :{
         type:Number
     },
-    contact :{
-        type:Number
-    },
-    bottle_desposite :{
+    bottle_deposit :{
         type:Number
     },
     bottle_rate :{
@@ -24,4 +21,4 @@ var addcustomerSchema = new mongoose.Schema({
     }
 });
 
-mongoose.model('Addcustomer',addcustomerSchema );
+mongoose.model('Addcustomer', addcustomerSchema );

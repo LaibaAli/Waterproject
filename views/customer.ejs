@@ -60,9 +60,10 @@
         <section>
             <div class="row gap100" style="width: 100%;">
                 <div class="col-md-6">
-                    <div class="table-responsive">
-                        <table id="autocomplete_table" class="table table-hover autocomplete_table">
-                            <thead class=" thread-light text-white text-center">
+                    <form method="post" action="/addCustomer">
+                        <div class="table-responsive">
+                            <table id="autocomplete_table" class="table table-hover autocomplete_table">
+                                <thead class=" thread-light text-white text-center">
                                 <tr>
                                     <th scope="col">#</th>
                                     <th scope="col">NAME</th>
@@ -73,51 +74,53 @@
                                     <th scope="col">bottle qty</th>
 
                                 </tr>
-                            </thead>
-                            <tbody id="save">
+                                </thead>
+                                <tbody id="save">
                                 <tr id="row_1">
                                     <th id="delete_1" scope="row" class="delete_row "><i class="fa fa-trash text-white"
-                                            aria-hidden="true"></i></th>
+                                                                                         aria-hidden="true"></i></th>
                                     <td>
-                                        <input type="text" data-type="name" name="name[]" id="name_1"
-                                            class="form-control autocomplete_text" autocomplete="off">
+                                        <input type="text" data-type="name" name="name" id="name_1"
+                                               class="form-control autocomplete_text" autocomplete="off">
                                     </td>
                                     <td>
-                                        <input type="text" data-type="bottle DLVD" name="bottle DLVD[]" id="bottle_DLVD"
-                                            class="form-control autocomplete_numeric" autocomplete="off">
+                                        <input type="text" data-type="bottle DLVD" name="address" id="bottle_DLVD"
+                                               class="form-control autocomplete_numeric" autocomplete="off">
                                     </td>
 
                                     <td>
-                                        <input type="number" data-type="empty RCVD" name="empty RCVD[]" id="empty_RCVD"
-                                            class="form-control autocomplete_numeric" autocomplete="off">
+                                        <input type="number" data-type="empty RCVD" name="contact" id="empty_RCVD"
+                                               class="form-control autocomplete_numeric" autocomplete="off">
                                     </td>
                                     <td>
-                                        <input type="number" data-type="bal bottle" name="bal bottle[]" id="bal_bottle"
-                                            class="form-control autocomplete_numeric" autocomplete="off">
+                                        <input type="number" data-type="bal bottle" name="bottle_deposit" id="bal_bottle"
+                                               class="form-control autocomplete_numeric" autocomplete="off">
                                     </td>
                                     <td>
-                                        <input type="number" data-type="rate" name="rate[]" id="rate_1"
-                                            class="form-control autocomplete_numeric" autocomplete="off">
+                                        <input type="number" data-type="rate" name="bottle_rate" id="rate_1"
+                                               class="form-control autocomplete_numeric" autocomplete="off">
                                     </td>
                                     <td>
-                                        <input type="number" data-type="amount RECD" name="bal bottle[]"
-                                            id="amount_RECD" class="form-control autocomplete_numeric"
-                                            autocomplete="off">
+                                        <input type="number" data-type="amount RECD" name="bottle_qty"
+                                               id="amount_RECD" class="form-control autocomplete_numeric"
+                                               autocomplete="off">
                                     </td>
 
                                 </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <!-----------------------------ADD ROWS BUTTON--------------->
-                    <div class="btn-container">
-                        <button class="btn " id="addNew"><i class="fa fa-plus" aria-hidden="true"></i> Add row</button>
-                        <!-----------------------------submit BUTTON--------------->
-                             <button class="btn" id="Submit"><i class="fa fa-database" aria-hidden="true"></i>
-                            Submit</button>
-                           
-                    </div>
-                   
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-----------------------------ADD ROWS BUTTON--------------->
+                        <div class="btn-container">
+                            <button class="btn " id="addNew"><i class="fa fa-plus" aria-hidden="true"></i> Add row</button>
+                            <!-----------------------------submit BUTTON--------------->
+                            <button class="btn" id="Submit"><i class="fa fa-database" aria-hidden="true"></i>
+                                Submit</button>
+
+                        </div>
+                    </form>
+
+
 
                     <!-----------------------------end BUTTON--------------->
                 </div>
@@ -135,6 +138,16 @@
                             </tr>
                         </thead>
                         <tbody style="background-color: white;">
+                        <%customers.map( item => {%>
+                            <tr>
+                                <th><%= item.name %></th>
+                                <th><%= item.address %></th>
+                                <th><%= item.contact %></th>
+                                <th><%= item.bottle_deposit %></th>
+                                <th><%= item.bottle_rate %></th>
+                                <th><%= item.bottle_qty %></th>
+                            </tr>
+                        <%})%>
                         </tbody>
                     </table>
                 </div>
